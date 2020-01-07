@@ -1,25 +1,27 @@
 // email array
-var emailDatabase = ['london@england.uk', 'paris@france.fr', 'berlin@germany.de', 'madrid@spain.es', 'brussels@belgium.be', 'test'];
-console.log('email stored in the database: ' + emailDatabase.length);
-console.log(emailDatabase);
+var databaseEmail = ['london@england.uk', 'paris@france.fr', 'berlin@germany.de', 'madrid@spain.es', 'brussels@belgium.be', 'test'];
+console.log('email stored in the database: ' + databaseEmail.length);
+console.log(databaseEmail);
 
 
 // ask user email address
 var userEmail = prompt("Insert your email address");
 console.log('userEmail set to');
 console.log(userEmail);
+var checkEmail = false;
 
 
 // check that the email is on the list
-for (var i = 0; i < emailDatabase.length; i++) {
-  if (emailDatabase[i] === userEmail) {
-    console.log("Found a match, loading your personal email...");
+for (var i = 0; i < databaseEmail.length; i++) {
+  if (databaseEmail[i] === userEmail) {
+    checkEmail = true;
   }
-  // if (emailDatabase[i] !== userEmail ) {
-  //   console.log("Your email is not stored in out database, sorry.")
-  // }
 }
 
 
-// print a message if found or not
-// ??
+// print the result message
+if (checkEmail == true ) {
+  console.log("Found a match, loading your personal email...");
+} else {
+  console.log("Your email is not stored in out database, sorry.")
+}
